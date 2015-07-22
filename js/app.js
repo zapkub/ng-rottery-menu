@@ -1,4 +1,4 @@
-var app = angular.module('rotteryMenuTest',[ ,'ngRotteryMenu']);
+var app = angular.module('rotteryMenuTest',[ 'ngRotteryMenu']);
 app.controller('mainController',function($scope){
     $scope.menuItems= [
         {title:"MenuItem 1"},

@@ -6,7 +6,9 @@ var wheelTween;
 var mouseWheel = 0;
 var lastY;
 var type = "vertical";
-var updateTween = function(degree,direction) {
+var debugDegree = 0;
+var updateTween = function(degree,direction,time) {
+
     if (type == 'vertical'){
         wheelTween = TweenMax.to(".rotteryMenu", 0.3, {
             rotation: "0",
@@ -56,25 +58,33 @@ module.directive("scrollMenu3dWheel", function ($compile) {
                     degree = 360;
                 }
 
-                updateTween(degree,direction);
+                updateTween(degree,direction,0.3);
                 $scope.degree = degree;
                 $scope.currentMenu = Math.floor( (degree / 24) % 14 );
                 $scope.$apply()
             };
 
-            $scope._onDrag = function(e){
+            var _onDrag = function(panType){
+
                 if(wheelTween){
                     wheelTween.kill();
                 }
                 var direction = "_cw";
-                var currentY = e.touches[0].clientY;
-                if(currentY > lastY){
+                var panReg = "panleft"
+                var panReg2 = 'panright';
+
+                if (type=="vertical"){
+                    panReg = 'pandown';
+                    panReg2 = 'panup';
+                }
+
+                if(panType.type == panReg){
                     // moved down
-                    degree = '-=30';
+                    degree = '-='+panType.distance/10;
                     direction = "_ccw";
-                }else if(currentY < lastY){
+                }else if(panType.type == panReg2){
                     // moved up
-                    degree = '+=30';
+                    degree = '+='+panType.distance/10;
                     direction = "_cw";
                 }
 
@@ -83,8 +93,8 @@ module.directive("scrollMenu3dWheel", function ($compile) {
                 }else if (degree < 0){
                     degree = 360;
                 }
-                updateTween(degree,direction);
-                lastY = currentY;
+                updateTween(degree,direction,0.3);
+
                 $scope.$apply();
 
 
@@ -93,7 +103,11 @@ module.directive("scrollMenu3dWheel", function ($compile) {
             //$element[0].addEventListener('DOMMouseScroll',$scope. _onWheel, false ); // For FF and Opera
             //$element[0].addEventListener('mousewheel', $scope._onWheel, false ); // For others
             //for mobile but i suggest modernizr because it work weird on mobile
-            document.addEventListener("touchmove", $scope._onDrag, false);
+            //document.addEventListener("touchmove", $scope._onDrag, false);
+            var mc = new Hammer($element[0]);
+            mc.on("panleft panright panup pandown", function(ev) {
+                _onDrag(ev);
+            });
 
             Hamster($element[0]).wheel(function(event, delta, deltaX, deltaY){
                 event.preventDefault();
@@ -119,7 +133,7 @@ module.directive("scrollMenu3dWheel", function ($compile) {
                     type = 'vertical';
                     console.log("rotteryUnknownType")
                 }
-                updateTween(degree,type);
+                updateTween(degree,type,1);
             });
 
 

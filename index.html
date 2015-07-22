@@ -7,13 +7,17 @@
 
 </head>
 <body  ng-controller="mainController">
-<a ng-click="debug = !debug" style="z-index:99;position:fixed" href="#" > debug :{{debug}}</a>
-<div class="container">
+<div style="position:fixed;z-index:99;">
     <h1>hover and scroll on it</h1>
-    <h2>top is menu number : {{currentMenu}}</h2>
+    <h2><a href="#" ng-click="type='vertical'">Vertical</a><a href="#" ng-click="type='horizontal'">Horizontal</a> </h2>
     <h2>at degree {{degree}}</h2>
-    <div scroll-menu3d-wheel data-type="vertical" class="rotteryContainer" >
-        <div class="rotteryMenu" ng-class="{'debug':debug}">
+    <a href="#" ng-click="debug = !debug">debug</a>
+</div>
+<div class="container" ng-init="type = 'horizontal'">
+
+
+    <div scroll-menu3d-wheel type="{{type}}" class="rotteryContainer" >
+        <div class="rotteryMenu">
             <div ng-repeat="item in menuItems" class="menu-item">
                 <div class="wrap">
                     <h1>{{item.title}}</h1>
@@ -21,14 +25,17 @@
             </div>
         </div>
     </div>
+
+
+
+
 </div>
 
 </body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 <script src="../bower_components/angular/angular.min.js"></script>
-<script src="../bower_components/hammer.js/hammer.js"></script>
 <script src="../bower_components/hamsterjs/hamster.js"></script>
-<script src="../bower_components/ryanmullins-angular-hammer/angular.hammer.min.js"></script>
+<script src="../bower_components/hammer.js/hammer.min.js"></script>
 <script src="js/ng-rottery-menu.js"></script>
 <script src="js/app.js"></script>
 </html>
