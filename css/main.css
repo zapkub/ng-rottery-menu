@@ -1,0 +1,336 @@
+/*
+ * A partial implementation of the Ruby list functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/lists.rb
+ */
+/*
+ * A partial implementation of the Ruby constants functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/lib/compass/sass_extensions/functions/constants.rb
+ */
+/*
+ * A partial implementation of the Ruby display functions from Compass:
+ * https://github.com/Compass/compass/blob/stable/core/lib/compass/core/sass_extensions/functions/display.rb
+ */
+body {
+  margin: 0; }
+
+.debug-pane {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  font-size: 25px; }
+
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+
+.rotteryContainer {
+  -webkit-perspective: 6000px;
+  -moz-perspective: 6000px;
+  -ms-perspective: 6000px;
+  -o-perspective: 6000px;
+  perspective: 6000px;
+  position: fixed;
+  overflow: visible;
+  width: 100%;
+  height: 355px;
+  top: 50%; }
+  .rotteryContainer.vertical {
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .rotteryContainer.vertical .rotteryMenu {
+      -webkit-transform: translateZ(-835px);
+      -moz-transform: translateZ(-835px);
+      -ms-transform: translateZ(-835px);
+      -o-transform: translateZ(-835px);
+      transform: translateZ(-835px);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      height: 100%;
+      position: absolute;
+      width: 100%; }
+      .rotteryContainer.vertical .rotteryMenu.debug {
+        -webkit-transform: translateZ(-11835px) rotateY(15deg);
+        -moz-transform: translateZ(-11835px) rotateY(15deg);
+        -ms-transform: translateZ(-11835px) rotateY(15deg);
+        -o-transform: translateZ(-11835px) rotateY(15deg);
+        transform: translateZ(-11835px) rotateY(15deg); }
+      .rotteryContainer.vertical .rotteryMenu .menu-item {
+        height: 355px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: all 1s;
+        -webkit-backface-visibility: visible;
+        -moz-backface-visibility: visible;
+        -ms-backface-visibility: visible;
+        -o-backface-visibility: visible;
+        backface-visibility: visible;
+        border-bottom: 1px solid white; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item .wrap {
+          width: 100%;
+          height: 100%;
+          padding: 0.725em; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(1) {
+          -webkit-transform: rotateX(0deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(0deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(0deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(0deg) translate3d(0, 0, 835px);
+          transform: rotateX(0deg) translate3d(0, 0, 835px);
+          background: #E8F5E9; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(2) {
+          -webkit-transform: rotateX(-24deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-24deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-24deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-24deg) translate3d(0, 0, 835px);
+          transform: rotateX(-24deg) translate3d(0, 0, 835px);
+          background: #C8E6C9; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(3) {
+          -webkit-transform: rotateX(-48deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-48deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-48deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-48deg) translate3d(0, 0, 835px);
+          transform: rotateX(-48deg) translate3d(0, 0, 835px);
+          background: #A5D6A7; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(4) {
+          -webkit-transform: rotateX(-72deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-72deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-72deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-72deg) translate3d(0, 0, 835px);
+          transform: rotateX(-72deg) translate3d(0, 0, 835px);
+          background: #81C784; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(5) {
+          -webkit-transform: rotateX(-96deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-96deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-96deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-96deg) translate3d(0, 0, 835px);
+          transform: rotateX(-96deg) translate3d(0, 0, 835px);
+          background: #66BB6A; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(6) {
+          -webkit-transform: rotateX(-120deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-120deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-120deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-120deg) translate3d(0, 0, 835px);
+          transform: rotateX(-120deg) translate3d(0, 0, 835px);
+          background: #4CAF50; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(7) {
+          -webkit-transform: rotateX(-144deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-144deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-144deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-144deg) translate3d(0, 0, 835px);
+          transform: rotateX(-144deg) translate3d(0, 0, 835px);
+          background: #43A047; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(8) {
+          -webkit-transform: rotateX(-168deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-168deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-168deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-168deg) translate3d(0, 0, 835px);
+          transform: rotateX(-168deg) translate3d(0, 0, 835px);
+          background: #388E3C; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(9) {
+          -webkit-transform: rotateX(-192deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-192deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-192deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-192deg) translate3d(0, 0, 835px);
+          transform: rotateX(-192deg) translate3d(0, 0, 835px);
+          background: #2E7D32; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(10) {
+          -webkit-transform: rotateX(-216deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-216deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-216deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-216deg) translate3d(0, 0, 835px);
+          transform: rotateX(-216deg) translate3d(0, 0, 835px);
+          background: #1B5E20; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(11) {
+          -webkit-transform: rotateX(-240deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-240deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-240deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-240deg) translate3d(0, 0, 835px);
+          transform: rotateX(-240deg) translate3d(0, 0, 835px);
+          background: #B9F6CA; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(12) {
+          -webkit-transform: rotateX(-264deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-264deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-264deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-264deg) translate3d(0, 0, 835px);
+          transform: rotateX(-264deg) translate3d(0, 0, 835px);
+          background: #69F0AE; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(13) {
+          -webkit-transform: rotateX(-288deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-288deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-288deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-288deg) translate3d(0, 0, 835px);
+          transform: rotateX(-288deg) translate3d(0, 0, 835px);
+          background: #00E676; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(14) {
+          -webkit-transform: rotateX(-312deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-312deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-312deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-312deg) translate3d(0, 0, 835px);
+          transform: rotateX(-312deg) translate3d(0, 0, 835px);
+          background: #00C853; }
+        .rotteryContainer.vertical .rotteryMenu .menu-item:nth-child(15) {
+          -webkit-transform: rotateX(-336deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateX(-336deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateX(-336deg) translate3d(0, 0, 835px);
+          -o-transform: rotateX(-336deg) translate3d(0, 0, 835px);
+          transform: rotateX(-336deg) translate3d(0, 0, 835px);
+          background: #00C853; }
+  .rotteryContainer.horizontal {
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
+    transform: translate(0%, -50%); }
+    .rotteryContainer.horizontal .rotteryMenu {
+      -webkit-transform: translateZ(-835px) translateX(-50%);
+      -moz-transform: translateZ(-835px) translateX(-50%);
+      -ms-transform: translateZ(-835px) translateX(-50%);
+      -o-transform: translateZ(-835px) translateX(-50%);
+      transform: translateZ(-835px) translateX(-50%);
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      -ms-transform-style: preserve-3d;
+      -o-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      height: 100%;
+      position: absolute;
+      width: 355px;
+      left: 50%; }
+      .rotteryContainer.horizontal .rotteryMenu.debug {
+        -webkit-transform: translateZ(-11835px) rotateY(15deg);
+        -moz-transform: translateZ(-11835px) rotateY(15deg);
+        -ms-transform: translateZ(-11835px) rotateY(15deg);
+        -o-transform: translateZ(-11835px) rotateY(15deg);
+        transform: translateZ(-11835px) rotateY(15deg); }
+      .rotteryContainer.horizontal .rotteryMenu .menu-item {
+        height: 355px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        transition: all 1s;
+        -webkit-backface-visibility: visible;
+        -moz-backface-visibility: visible;
+        -ms-backface-visibility: visible;
+        -o-backface-visibility: visible;
+        backface-visibility: visible;
+        border-left: 1px solid white; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item .wrap {
+          width: 100%;
+          height: 100%;
+          padding: 0.725em; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(1) {
+          -webkit-transform: rotateY(0deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(0deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(0deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(0deg) translate3d(0, 0, 835px);
+          transform: rotateY(0deg) translate3d(0, 0, 835px);
+          background: #E8F5E9; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(2) {
+          -webkit-transform: rotateY(-24deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-24deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-24deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-24deg) translate3d(0, 0, 835px);
+          transform: rotateY(-24deg) translate3d(0, 0, 835px);
+          background: #C8E6C9; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(3) {
+          -webkit-transform: rotateY(-48deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-48deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-48deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-48deg) translate3d(0, 0, 835px);
+          transform: rotateY(-48deg) translate3d(0, 0, 835px);
+          background: #A5D6A7; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(4) {
+          -webkit-transform: rotateY(-72deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-72deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-72deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-72deg) translate3d(0, 0, 835px);
+          transform: rotateY(-72deg) translate3d(0, 0, 835px);
+          background: #81C784; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(5) {
+          -webkit-transform: rotateY(-96deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-96deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-96deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-96deg) translate3d(0, 0, 835px);
+          transform: rotateY(-96deg) translate3d(0, 0, 835px);
+          background: #66BB6A; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(6) {
+          -webkit-transform: rotateY(-120deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-120deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-120deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-120deg) translate3d(0, 0, 835px);
+          transform: rotateY(-120deg) translate3d(0, 0, 835px);
+          background: #4CAF50; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(7) {
+          -webkit-transform: rotateY(-144deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-144deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-144deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-144deg) translate3d(0, 0, 835px);
+          transform: rotateY(-144deg) translate3d(0, 0, 835px);
+          background: #43A047; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(8) {
+          -webkit-transform: rotateY(-168deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-168deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-168deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-168deg) translate3d(0, 0, 835px);
+          transform: rotateY(-168deg) translate3d(0, 0, 835px);
+          background: #388E3C; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(9) {
+          -webkit-transform: rotateY(-192deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-192deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-192deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-192deg) translate3d(0, 0, 835px);
+          transform: rotateY(-192deg) translate3d(0, 0, 835px);
+          background: #2E7D32; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(10) {
+          -webkit-transform: rotateY(-216deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-216deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-216deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-216deg) translate3d(0, 0, 835px);
+          transform: rotateY(-216deg) translate3d(0, 0, 835px);
+          background: #1B5E20; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(11) {
+          -webkit-transform: rotateY(-240deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-240deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-240deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-240deg) translate3d(0, 0, 835px);
+          transform: rotateY(-240deg) translate3d(0, 0, 835px);
+          background: #B9F6CA; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(12) {
+          -webkit-transform: rotateY(-264deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-264deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-264deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-264deg) translate3d(0, 0, 835px);
+          transform: rotateY(-264deg) translate3d(0, 0, 835px);
+          background: #69F0AE; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(13) {
+          -webkit-transform: rotateY(-288deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-288deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-288deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-288deg) translate3d(0, 0, 835px);
+          transform: rotateY(-288deg) translate3d(0, 0, 835px);
+          background: #00E676; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(14) {
+          -webkit-transform: rotateY(-312deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-312deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-312deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-312deg) translate3d(0, 0, 835px);
+          transform: rotateY(-312deg) translate3d(0, 0, 835px);
+          background: #00C853; }
+        .rotteryContainer.horizontal .rotteryMenu .menu-item:nth-child(15) {
+          -webkit-transform: rotateY(-336deg) translate3d(0, 0, 835px);
+          -moz-transform: rotateY(-336deg) translate3d(0, 0, 835px);
+          -ms-transform: rotateY(-336deg) translate3d(0, 0, 835px);
+          -o-transform: rotateY(-336deg) translate3d(0, 0, 835px);
+          transform: rotateY(-336deg) translate3d(0, 0, 835px);
+          background: #00C853; }
+
+/*# sourceMappingURL=main.css.map */
